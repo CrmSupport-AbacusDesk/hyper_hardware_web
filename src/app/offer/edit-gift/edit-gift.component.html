@@ -1,0 +1,119 @@
+<div class="sprate-box ">
+  <div class="full-offer">
+    <div class="top-heading">
+      <h2>ADD GIFT</h2>
+      <div class="close-icon">
+        <button mat-button mat-dialog-close ><i class="material-icons">clear</i></button>
+      </div>
+    </div>
+  </div>
+  <div class="padding5">
+    <div class="option-field">
+      <div class="control-field" *ngIf="newItems.length != 0">
+        <mat-form-field class="cs-input">
+          <mat-select placeholder="Gifts" [(ngModel)]="gift" [name]="'gift'" >
+            <mat-option *ngFor = "let gifts of newItems" [value]="gifts">{{gifts.gift_title}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      
+      <div class="control-field" *ngIf="newItems.length == 0">
+        <mat-form-field class="cs-input">
+          <mat-select  style="cursor:not-allowed!important;" placeholder="Duplicate Gift Not Allowed" [(ngModel)]="gift" [name]="'gift'" >
+            <mat-option style="cursor:not-allowed!important;" *ngFor = "let gifts of newItems" [value]="gifts">{{gifts.gift_title}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    
+    <div class="row mt15">
+      <div class="col s12">
+        <div class="save un-save " *ngIf="newItems.length == 0">
+          <button style="cursor:not-allowed;" class="disabled_btn" mat-button>ADD GIFT</button>
+        </div>
+        <div class="save un-save" *ngIf="newItems.length != 0">
+          <button style="cursor:pointer;"  mat-button (click)="addgiftList()">ADD GIFT</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row mb15"  *ngIf="giftList?.length">
+      <div class="col s12">
+        <div class="css-table left-right-15 scroll-data">
+          <div class="sticky-header">
+            <div class="header">
+              <table> 
+                <tr>
+                  <th class="w50" >&nbsp;</th>
+                  <th class="w150" style="border-left: 1px solid #D2D2D2;">Title</th>
+                  <th class="w100">Points</th>
+                  <th >Specification</th>
+                  <th class="w110">Action</th>
+                </tr>
+              </table>
+            </div>
+          </div>
+          
+          <div class="table-container" style="margin-bottom: 0px !important;">
+            <div class="table-body">
+              <table>
+                <tr *ngFor="let raw of giftList; let p = index">
+                  <td class="w50" style="border-right: 1px solid #D2D2D2;">
+                    <!-- <div class="image-thum"><img [src]="raw.image"></div> -->
+                    <ng-container  *ngFor="let row of raw.image">
+                      <!-- (click)="openDialog(uploadUrl+row.image_name,'normal')" -->
+                      <img [src]="uploadUrl+row.image_name" style="cursor: text;">
+                      <!-- <div class="image-thum" *ngIf="val.image[i].image_name==''">
+                        <img [src]="val.image[i].image_name" (click)="openDialog(val.image[i].image_name,'base64')">
+                      </div> -->
+                    </ng-container>
+                  </td>
+                  <td class="w150">{{ raw.gift_title }}</td>
+                  <td class="w100">{{ raw.coupon_points }}</td>
+                  <td [innerHTML]="raw.gift_specification"></td>
+                  <td class="w110 active">
+                    <div class="action-btns mt11 left-btn opcity-non">
+                      <div class="dele-sec" style="cursor:pointer" mat-raised-button (click)="RemoveItem(p)">
+                        <i class="material-icons">delete_sweep</i>
+                        <p>Delete</p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>               
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <div class="save un-save"  *ngIf="giftList?.length" >
+        <button mat-button  (click)="addoffer()" >SAVE</button>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- <div class="row">
+    <div class="col-12">
+      <div class="cs-file">
+        <p>Upload Image</p>
+        <ul>
+          <li>
+            <div class="add-img-co">
+              <div class="cs-file  file-up">
+                <label>
+                  <input type="file" (change)="onUploadChange2($event)" style="display:none;" accept=".png, .jpg, .jpeg " />
+                  <img  [src]="tmpimg ? tmpimg : uploadUrl+offer.gift_image" alt="" id="img">
+                  <i class="material-icons add-file-icon" >add</i>
+                </label>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> -->
+</div>

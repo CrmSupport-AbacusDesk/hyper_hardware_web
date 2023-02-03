@@ -1,0 +1,120 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+
+
+
+$mat-primary: (
+500: #231f20,
+contrast: (
+)
+);
+
+$mat-warn: (
+500: #ec222a,
+contrast: (
+)
+);
+
+
+$mat-accent: (
+
+500: #158700,
+
+contrast: (
+)
+);
+
+
+
+$mytheme-primary: mat-palette($mat-primary);
+$mytheme-accent:  mat-palette($mat-accent);
+$mytheme-warn:  mat-palette($mat-warn);
+
+$mytheme-theme: mat-light-theme($mytheme-primary, $mytheme-accent, $mytheme-warn);
+
+@include angular-material-theme($mytheme-theme);
+
+:root {
+    --primary: #231f20;
+	--primary-rgb: 35,31,32;
+	--primary-contrast: #ffffff;
+	--primary-contrast-rgb: 255,255,255;
+	--primary-shade: #1f1b1c;
+	--primary-tint: #393536;
+
+	--secondary: #ec222a;
+	--secondary-rgb: 236,34,42;
+	--secondary-contrast: #ffffff;
+	--secondary-contrast-rgb: 255,255,255;
+	--secondary-shade: #d01e25;
+	--secondary-tint: #ee383f;
+
+
+    --tertiary: #fefbd6;
+    --tertiary-rgb: 254,251,214;
+    --tertiary-contrast: #000000;
+    --tertiary-contrast-rgb: 0,0,0;
+    --tertiary-shade: #e0ddbc;
+    --tertiary-tint: #fefbda;
+    
+    --success: #158700;
+    --success-rgb: 21,135,0;
+    --success-contrast: var(--white);
+    --success-contrast-rgb: 255,255,255;
+    --success-shade: #127700;
+    --success-tint: #2c931a;
+    
+    --warning: #EF9B11;
+    --warning-rgb: 255, 206, 0;
+    --warning-contrast: var(--white);
+    --warning-contrast-rgb: 255, 255, 255;
+    --warning-shade: #e0b500;
+    --warning-tint: #ffd31a;
+    
+    --danger: #f00000;
+    --danger-rgb: 237,50,55;
+    --danger-contrast: var(--white);
+    --danger-contrast-rgb: 255,255,255;
+    --danger-shade: #d12c30;
+    --danger-tint: #ef474b;
+    
+    --dark: #002341;
+    --dark-rgb: 0, 35, 65;
+    --dark-contrast: var(--white);
+    --dark-contrast-rgb: 255, 255, 255;
+    --dark-shade: #01192E;
+    --dark-tint: #06355D;
+    --light-blue: #005aa5;
+    --medium: #f5f5f5;
+    --medium-rgb: 245,245,245;
+    --medium-contrast: #000000;
+    --medium-contrast-rgb: 0,0,0;
+    --medium-shade: #d8d8d8;
+    --medium-tint: #f6f6f6;
+    
+    
+    --light: #D2D2D2;
+    --light-rgb: 210,210,210;
+    --light-contrast: #000000;
+    --light-contrast-rgb: 0,0,0;
+    --light-shade: #b9b9b9;
+    --light-tint: #d7d7d7;
+    
+    
+    --white: #ffffff;
+    --white-rgb: 255,255,255;
+    --white-contrast: #000000;
+    --white-contrast-rgb: 0,0,0;
+    --white-shade: #e0e0e0;
+    --white-tint: #ffffff;
+    
+    --black: #000000;
+    --black-rgb: 0,0,0;
+    --black-contrast: #ffffff;
+    --black-contrast-rgb: 255,255,255;
+    --black-shade: #000000;
+    --black-tint: #1a1a1a;
+    
+}
+

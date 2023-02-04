@@ -24,7 +24,7 @@
             <div class="image-list">
                 <ul>
                     <li *ngFor="let val of categories; let i = index">
-                        <div class="image-section1" style="cursor: default;">
+                        <div class="image-section1 ctg_im" style="cursor: default;">
                             <ng-container *ngIf="val.image_name">
                                 <img [src]="uploadurl+val.image_name" >
                                 <!-- (click)="openDialog(val.image[0].image_name, 'test2' )"   -->

@@ -17,7 +17,11 @@
             
             <div class="detail-info">
               <div class="img-box">
-                <img [src]="getData.profile" (click)="openDialog( getData.karigar_id,'test5')">
+                <!-- <img [src]="uploadUrl+getData.profile" (click)="openDialog( getData.karigar_id,'test5')"> -->
+
+                <img src="{{uploadUrl+getData.profile}}" (click)="openDialog(getData.karigar_id,'test5')">
+
+
               </div>
               
               <div class="basic-details">
@@ -174,7 +178,8 @@
             </div>
             <div class="detail-info pl0 pr0">
               <div class="img-box">
-                <img [src]="getData.document_image" (click)="openDialog( getData.document_image,'document')">
+                <img [src]="uploadUrl +getData.document_image" (click)="openDialog( uploadUrl + getData.document_image,'document')">
+
               </div>
               <div class="basic-details">
                 <div class="profile-info">
@@ -280,7 +285,7 @@
                   <div class="territory-infos ">
                     <div class="cs-checkboxs">
                       <div class="checkbox-outers checkbox-outers1">
-                        <img [src]="getData.offer_banner">
+                        <img [src]="uploadUrl + getData.offer_banner">
                       </div>
                     </div>  
                   </div>

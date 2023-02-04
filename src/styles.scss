@@ -1264,7 +1264,7 @@ h1, h2, h3, h4, h5, h6
         padding: 10px 15px;
         position: relative;
         z-index: 1;
-        border-bottom: 2px solid var(--secondary);
+        border-bottom: 2px solid #3b5a9a;
         overflow: hidden;
         
         h2 
@@ -2531,8 +2531,8 @@ table
             align-items: center;
             justify-content: center;
             height: 180px;
-            border-bottom: 4px solid var(--secondary);
-            background: var(--primary);
+            border-bottom: 4px solid #3b5a9a;
+            background: #fff;
             
             img{
                 height: 100px;
@@ -5084,7 +5084,7 @@ header
                             {
                                 span
                                 {
-                                    background: var(--primary);
+                                    background: #2db76a;
                                     color: var(--white);
                                     font-size: 0px;
                                     
@@ -6404,7 +6404,7 @@ button,a
             
             .image-section1
             {
-                height: 180px;
+                height: 230px;
                 border: 1px solid #D8D8D8;
                 position:relative;
                 display: flex;
@@ -8706,3 +8706,17 @@ i.ico_dwn {
     overflow: hidden;
     cursor: pointer;
 }
+
+
+
+
+
+.top-nav ul li button {
+    background: #000 !important;
+    width: 120px !important;
+}
+
+.ctg_im img {
+    padding: 50px;
+}
+

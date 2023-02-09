@@ -522,7 +522,7 @@
                                             <div class="form-area">
                                                 <div class="search-form">
                                                     <input type="text" placeholder="search" [(ngModel)]="filter.product_name"
-                                                    (keyup.enter)="current_page = 1;getAvailableCoupanList('')">
+                                                    (keyup.enter)="current_page = 1;getScannedList('')">
                                                     <i class="material-icons">search</i>
                                                 </div>
                                             </div>
@@ -612,7 +612,7 @@
                                         <th class="w130">Redeem Status</th>
                                         <th class="w125">Gift Status</th>
                                         <th class="w110">Action</th>
-                                        <th class="w100">Reedem detail</th>
+                                        <!-- <th class="w100">Reedem detail</th> -->
                                     </tr>
                                 </table>
                             </div>
@@ -656,6 +656,16 @@
                                         </th>
                                         <th class="w50"></th>
                                         <th class="w220">
+
+
+                                            <div class="search-form">
+                                                <input type="text" placeholder="Offer" [(ngModel)]="filter.offer_title"
+                                                    (keyup.enter)="current_page = 1;getReedamList()">
+                                                <i class="material-icons">search</i>
+                                            </div>
+
+
+
                                             <div class="date-form">
                                                 <i *ngIf="filter.end_date" class="material-icons"
                                                     (click)="filter.end_date = '';getReedamList() ">clear</i>
@@ -707,8 +717,8 @@
 
                                         <th class="w110">
                                         </th>
-                                        <th class="w100">
-                                        </th>
+                                        <!-- <th class="w100">
+                                        </th> -->
                                     </tr>
                                 </table>
                             </div>
@@ -755,8 +765,8 @@
                                                 (click)="requestchangeStatus(i, val.id, val.gift_status )"
                                                 *ngIf="val.receive_status != 'Received'  && val.gift_status != 'Reject' ">Gift
                                                 Status</a></td>
-                                        <td class="w100"><a class="blue" (click)="coupon_summary(val.id)">Summary</a>
-                                        </td>
+                                        <!-- <td class="w100"><a class="blue" (click)="coupon_summary(val.id)">Summary</a>
+                                        </td> -->
                                     </tr>
                                 </table>
                             </div>
@@ -773,10 +783,10 @@
                             <div class="header">
                                 <table>
                                     <tr>
-                                        <th class="w50">S No</th>
-                                        <th class="w150">Date Created</th>
-                                        <th class="w200">Point Type</th>
-                                        <th class="w200">Points</th>
+                                        <th class="w20">S No</th>
+                                        <th class="w50">Date Created</th>
+                                        <th class="w100">Point Type</th>
+                                        <th class="w100">Points</th>
                                     </tr>
                                 </table>
                             </div>
@@ -785,10 +795,10 @@
                             <div class="table-body" *ngIf="referral_data.length > 0">
                                 <table>
                                     <tr *ngFor="let val of referral_data; let i = index">
-                                        <td class="w50">{{ i + 1 }}</td>
-                                        <td class="150">{{val.date_created | date: 'dd MMM yyyy'}}</td>
-                                        <td class="w200">{{val.summary}}</td>
-                                        <td class="w200"><strong>{{val.points}}</strong></td>
+                                        <td class="w20">{{ i + 1 }}</td>
+                                        <td class="w50">{{val.date_created | date: 'dd MMM yyyy'}}</td>
+                                        <td class="w100">{{val.summary}}</td>
+                                        <td class="w100"><strong>{{val.points}}</strong></td>
                                     </tr>
                                 </table>
                             </div>

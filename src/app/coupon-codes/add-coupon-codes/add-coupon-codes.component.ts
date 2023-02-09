@@ -46,6 +46,10 @@ console.log(search);
 
   getAvailableCoupanList(f){
      this.filter.date = this.filter.date  ? this.db.pickerFormat(this.filter.date) : '';
+
+
+    //  this.filter.productsearch = this.filter.productsearch  ? this.filter.productsearch : '';
+
     console.log("coupon list is come");
     this.db.post_rqst({'filter': this.filter},'app_master/coupon_history').subscribe(r=>{
       // console.log(r);

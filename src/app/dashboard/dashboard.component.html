@@ -174,13 +174,13 @@
 </div>
 
     <div class="row mb15">
-        <div class="col s8">
+        <!-- <div class="col s8">
             <div class="pie-chart">
                 <div class="chart-header">
                     <p>Weekly Trend Carpenter</p>
-                    <!-- <div class="sm-tab">
+                    <div class="sm-tab">
                         <a class="" [ngClass]="{'active': show_karigar_graph == true}" (click)="showKarigarGraph()" mat-button>Karigar</a>
-                    </div> -->
+                    </div>
                 </div>
                 <div class="chart" >
                     <fusioncharts
@@ -191,7 +191,7 @@
                 </fusioncharts>
             </div>
             </div>
-        </div>
+        </div> -->
         
         <div class="col s4">
             <div class="pie-chart">
@@ -211,8 +211,97 @@
             </div>
             </div>
     </div>
+
+
+
+    <div class="col s4">
+        <div class="pie-chart">
+            <div class="chart-header">
+                <p>Offer Balance Day's</p>
+            </div>
+            <div class="cs-table scroll-335">
+                <table>
+                    <tr>
+                        <th class="first-head">
+                            <div class="table-head">
+                                <table>
+                                    <tr>
+                                        <th>Offer</th>
+                                        <th class="w80 text-center">Day's</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="table-body">
+                                <table>
+                                    <tr *ngFor="let data of offer_balance_days">
+                                        <td>{{data.title | titlecase}}  #{{data.id}}</td>
+                                        <td class="w80 day">{{data.balance_days}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+</div>
+
+
+
+
+
+<div class="col s4">
+    <div class="pie-chart">
+        <div class="chart-header">
+            <p>Super 30 </p>
+            
+            <!-- <div class="sm-tab">
+                <a class="" [ngClass]="{'active': showKarigarList == true}"  (click)="showKarigar()" mat-button>Karigar</a>
+                <a class="" mat-button>Distributor</a>
+            </div> -->
+        </div>
+        <div class="cs-table scroll-335">
+            <table>
+                <tr>
+                    <th class="first-head">
+                        <div class="table-head">
+                            <table>
+                                <tr>
+                                    <th>Name</th>
+                                    <th class="w200">State</th>
+                                    <th class="w90 text-center">Balance Points</th>
+                                    <th class="w90 text-center">Gift Eligible</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="table-body">
+                            <table >
+                                <tr *ngFor="let data of super_karigars">
+                                    <td>{{data.first_name | titlecase}}</td>
+                                    <td class="w200">{{data.state}}</td>
+                                    <td class="w90 point">{{data.balance_point}}</td>
+                                    <td class="w90 eligible">{{data.gift_eligible}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
-    <div class="row mb15">
+</div>
+
+
+    </div>
+    <!-- <div class="row mb15">
         <div class="col s8">
             <div class="pie-chart">
                 <div class="chart-header">
@@ -230,50 +319,16 @@
             </div>
         </div>
         
-        <div class="col s4">
-            <div class="pie-chart">
-                <div class="chart-header">
-                    <p>Offer Balance Day's</p>
-                </div>
-                <div class="cs-table scroll-335">
-                    <table>
-                        <tr>
-                            <th class="first-head">
-                                <div class="table-head">
-                                    <table>
-                                        <tr>
-                                            <th>Offer</th>
-                                            <th class="w80 text-center">Day's</th>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="table-body">
-                                    <table>
-                                        <tr *ngFor="let data of offer_balance_days">
-                                            <td>{{data.title | titlecase}}  #{{data.id}}</td>
-                                            <td class="w80 day">{{data.balance_days}}</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-    </div>
-    </div>
-    <div class="row mb15">
+      
+    </div> -->
+    <!-- <div class="row mb15">
         <div class="col s8">
             <div class="pie-chart">
                 <div class="chart-header">
                     <p>Weekly Trend Scanned Coupons</p>
-                    <!-- <div class="sm-tab">
+                    <div class="sm-tab">
                         <a class="" [ngClass]="{'active': show_karigar_graph == true}" (click)="showKarigarGraph()" mat-button>Karigar</a>
-                    </div> -->
+                    </div>
                 </div>
                 <div class="chart" >
                     <fusioncharts
@@ -286,50 +341,7 @@
             </div>
         </div>
         
-        <div class="col s4">
-            <div class="pie-chart">
-                <div class="chart-header">
-                    <p>Super 30 </p>
-                    
-                    <!-- <div class="sm-tab">
-                        <a class="" [ngClass]="{'active': showKarigarList == true}"  (click)="showKarigar()" mat-button>Karigar</a>
-                        <a class="" mat-button>Distributor</a>
-                    </div> -->
-                </div>
-                <div class="cs-table scroll-335">
-                    <table>
-                        <tr>
-                            <th class="first-head">
-                                <div class="table-head">
-                                    <table>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th class="w200">State</th>
-                                            <th class="w90 text-center">Balance Points</th>
-                                            <th class="w90 text-center">Gift Eligible</th>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="table-body">
-                                    <table >
-                                        <tr *ngFor="let data of super_karigars">
-                                            <td>{{data.first_name | titlecase}}</td>
-                                            <td class="w200">{{data.state}}</td>
-                                            <td class="w90 point">{{data.balance_point}}</td>
-                                            <td class="w90 eligible">{{data.gift_eligible}}</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-    </div>
-    </div>
+      
+    </div> -->
 </div>
 </div>

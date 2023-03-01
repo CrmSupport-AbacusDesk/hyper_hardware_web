@@ -1,0 +1,63 @@
+
+
+
+  <h2 class="cs-model-heading">Logs</h2>
+  <mat-dialog-content class="mat-typography mat-model">
+    <div class="option-field">
+      <div class="row mb0">
+        <!-- <div class="col s6 pl10">
+          <div class="control-field">
+            <mat-form-field class="cs-input">
+              <input matInput  placeholder="Coupon Code" [(ngModel)]="data.coupon_code" disabled>
+            </mat-form-field>
+          </div>
+        </div> -->
+        <!-- <div class="col s6 pr10">
+          
+          <div class="control-field">
+            <mat-form-field class=" cs-input cs-multi-select">
+              <mat-select placeholder="Karigar" name="karigar" [(ngModel)]="data.karigar_id" #Karigar="ngModel" 
+              required>
+              
+              <mat-option >
+                <ngx-mat-select-search  placeholderLabel="Search.."  (keyup)="getKariger($event.target.value)"></ngx-mat-select-search>
+              </mat-option>
+              
+              <mat-option *ngFor="let pc of karigar;" value={{pc.karigar_id}}
+              >
+              {{pc.full_name}}
+            </mat-option> 
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div> -->
+      
+    <div class="territory-infos my-scroll" style="border-radius: 0px;padding-top: 10px;border:0px">
+    <div class="offer-summery">
+      <ul>
+          <li>
+              <div class="offer-list">
+                  <div class="odder-cradet">
+                      <p style="font-weight: 500;">#Coupon Used Type</p>
+                      <span  style="position: relative;
+                      top: -8px;
+                      left: 10px;">{{coupon_log.title}}</span>
+                  </div>
+                  <div class="time-info">
+                      <i class="material-icons" style="padding-right: 9px;
+                      margin-top: -11px;">watch_later</i>
+                      <p>{{coupon_log.date_created  | date: 'dd MMM yyyy h:mm a' }}</p>
+                  </div>
+              </div>
+              <!-- <h4>{{val.remark}}</h4> -->
+          </li>
+      </ul>
+  </div>
+  </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button style="position:absolute;" mat-button mat-dialog-close>Cancel</button>
+  <button style="visibility: hidden;" mat-raised-button color="primary"   cdkFocusInitial>Save</button>
+</mat-dialog-actions>

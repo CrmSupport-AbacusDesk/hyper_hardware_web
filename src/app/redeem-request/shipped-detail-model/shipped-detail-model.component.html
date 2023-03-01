@@ -1,0 +1,82 @@
+<div class="gift-box">
+  <div class="gift-heading">
+    <p>{{modalData.payment_type}} Detail</p>
+    <div class="close-icon">
+      <button mat-button mat-dialog-close ><i class="material-icons">clear</i></button>
+    </div>
+  </div>
+  
+  <div class="trans pt15">   
+    <form name="offer" (ngSubmit)="f.form.valid && submit(f) " #f="ngForm" novalidate autocomplete="off">
+      <div class="option-field"  >
+        <div class="control-field" *ngIf="modalData.payment_type == 'Shipped'">
+          <mat-form-field class="cs-input">
+            <mat-select  placeholder="Shipped Type" [(ngModel)] = "offer.shipped_type" #shipped_type="ngModel" name="shipped_type" required>
+              <mat-option value ="Courier" >Courier</mat-option>
+              <mat-option value ="Hand Picked" >Hand Picked</mat-option>
+              <mat-option value ="Ship To Store" >Ship to Store</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        
+        <ng-container *ngIf="modalData.payment_type == 'Transfer'">
+
+
+
+          <!-- <div class="control-field">
+            <div>
+                <mat-form-field class="cs-input ">
+                    <input matInput placeholder="Payment Mode" [(ngModel)] = "offer.payment_mode" #payment_mode ="ngModel" name="shipped_type"  readonly>
+                </mat-form-field>
+            </div>
+        </div> -->
+
+
+          <div class="control-field" >
+            <mat-form-field class="cs-input">
+              <mat-select  placeholder="Payment Mode" [(ngModel)] = "offer.payment_mode" #payment_mode ="ngModel" name="shipped_type" readonly>
+                <!-- <mat-option value ="NEFT" >NEFT</mat-option> -->
+                <!-- <mat-option value ="Cheque" >Cheque</mat-option> -->
+                <!-- <mat-option value ="UPI" >UPI</mat-option> -->
+                <mat-option value ="PAYTM" >PAYTM</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="control-field" >
+            <mat-form-field class="cs-input">
+              <input placeholder="Transaction Number" [(ngModel)]="offer.transaction_no" name="transaction_no" matInput required >
+            </mat-form-field>  
+          </div>
+        </ng-container>
+      </div>
+      <div class="option-field"  >
+        <div class="control-field"  *ngIf="modalData.payment_type == 'Transfer'">
+          <mat-form-field class="cs-input">
+            <input placeholder="Transfer Date" class="h46" [(ngModel)]="offer.transfer_date" (click)="openDatePicker(picker1)" [min]="date1" name="transfer_date" matInput  [matDatepicker]="picker1" required >
+            <mat-datepicker-toggle matSuffix [for]="picker1" ></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>  
+        </div>
+
+        <div class="control-field"  *ngIf="modalData.payment_type == 'Shipped'">
+          <mat-form-field class="cs-input">
+            <input placeholder="Estimate Delivery Date" class="h46" [(ngModel)]="offer.estimated_date" (click)="openDatePicker(picker)" [min]="date1" name="estimated_date" matInput  [matDatepicker]="picker" required >
+            <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>  
+        </div>
+      </div>
+      
+      <div class="option-field mt15"   *ngIf="modalData.payment_type == 'Shipped'">
+        <div class="control-field">
+          <app-ngx-editor height="129px" minHieght="50px" [placeholder]="'Shipping Information'" [spellcheck]="true"  [(ngModel)]="offer.shipping_information"  #shipping_information="ngModel" name="shipping_information"></app-ngx-editor>
+        </div>
+      </div>
+      
+      <div class="save mt15" [ngClass]="{loading: savingData}">
+        <button mat-button class="mb0"  [disabled]="savingData" >SAVE</button>
+      </div>
+    </form>
+  </div>
+</div>

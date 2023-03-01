@@ -1,0 +1,146 @@
+<!-- <div class="gift-box">
+    <div class="gift-heading">
+        <p>USER DETAILS</p>
+        <div class="close-icon">
+            <button mat-button [mat-dialog-close]="false" ><i class="material-icons">clear</i></button>
+        </div>
+    </div>
+    
+    <div class="gift-body">
+        <div class="css-table ">
+            <div class="sticky-header">
+                <div class="header">
+                    <table> 
+                        <tr>
+                            <th >Offer </th>
+                            <th class="w150 text-center">Coupon Value</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="table-container bg-color">
+                <div class="table-body">
+                    <table>
+                        <tr>
+                            <td>Referral/Welcome Point</td>
+                            <td class="w150 text-center">{{karigar_referral_point.referal_point_balance}}</td>
+                        </tr>
+                        <tr *ngFor="let val of balance; let i = index">
+                            <td><a  routerLink="/offer-detail"  routerLink="/offer-detail/{{val.id}}" class="link">{{val.title  | titlecase }}</a></td>
+                            <td class="w150 text-center">{{val.offer_balance}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+
+
+<div class="gift-box">
+    <div class="zift-hadding">
+        <p>POINT DETAILS</p>
+        <div class="close-icon">
+            <button mat-button [mat-dialog-close]="false" ><i class="material-icons">clear</i></button>
+        </div>
+    </div>
+    
+    <div class="gift-body">
+        
+        <div class="my-point two-col" >
+            <ul>
+                <li >
+                    <div class="row">
+                        <div class="col s2">
+                            <i class="material-icons">qr_code_scanner</i>
+                        </div>
+                        <div class="col s10">
+                            <p >Total Earn By Scan</p>
+                            <span>{{balance.total_scanned_amount}} Points</span>
+                        </div>
+                    </div>
+                </li>
+                <li >
+                    <div class="row">
+                        <div class="col s2">
+                            <i class="material-icons">redeem</i>
+                        </div>
+                        <div class="col s10">
+                            <p >Total Redeem </p>
+                            <span style="color: red;">{{balance.redeem_approved_points}} Points</span>
+                        </div>
+                    </div>
+                </li>
+                <li >
+                    <div class="row">
+                        <div class="col s2">
+                            <i class="material-icons">share</i>
+                        </div>
+                        <div class="col s10">
+                            <p >Total Earn Referral </p>
+                            <span>{{balance.total_refral_balance}} Points</span>
+                        </div>
+                    </div>
+                </li>
+             
+                <li >
+                    <div class="row">
+                        <div class="col s2">
+                            <i class="material-icons">share</i>
+                        </div>
+                        <div class="col s10">
+                            <p>Current Referral </p>
+                            <span>{{balance.referal_point_balance}} Points</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="css-table ">
+            <div class="sticky-header">
+                <div class="header">
+                    <table> 
+                        <tr>
+                            <th >Balance Type</th>
+                            <th class="w150 text-center">Points</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="table-container bg-color">
+                <div class="table-body">
+                    <table>
+                        <!-- <tr *ngFor="let val of balance; let i = index">
+                            <td>Total Scan Point</td>
+                            <td class="w150 text-center">{{val.offer_balance}}</td>
+                        </tr> -->
+                        <tr>
+                            <td>Current Scan Point</td>
+                            <td class="w150 text-center">{{balance.balance_point}}</td>
+                        </tr>   
+                        <!-- <tr>
+                            <td>Referral/Welcome/birthday Point</td>
+                            <td class="w150 text-center">{{karigar_referral_point.referal_point_balance}}</td>
+                        </tr> -->
+                        <tr>
+                            <td>Referral/Welcome/Birthday Balance After Redeem  <strong>{{balance.one_time_percentage}} %</strong> Point</td>
+                            <td class="w150 text-center">{{ref_bal_after_per}}</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>Redeem Balance point</strong></td>
+                            <td class="w150 text-center"><strong>{{(total_point)}}</strong></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

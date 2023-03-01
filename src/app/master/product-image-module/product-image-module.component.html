@@ -1,0 +1,141 @@
+<div class="all-modules">
+    
+    
+    <mat-dialog-content class="mat-typography">
+        
+        <div class="gift-box product-img " *ngIf="part_data.mode == 'test1'">  
+            <div class="form-area">
+                <img [src]="uploadUrl+part_data.id">
+                <a href="{{uploadUrl+part_data.id}}" download target="_blank" ><i class="material-icons">get_app</i></a>
+            </div>
+            <button mat-button [mat-dialog-close]="false" ><i class="material-icons">clear</i></button>
+        </div>
+        
+        <div class="gift-box product-img " *ngIf=" part_data.mode == 'test2'">  
+            <div class="form-area">
+                <img [src]="uploadUrl+part_data.id">
+            </div>
+            <button mat-button [mat-dialog-close]="false" ><i class="material-icons">clear</i></button>
+        </div>
+        
+        <div class="gift-box product-img " *ngIf=" part_data.mode == 'test3'">  
+            <div class="form-area">
+                <img [src]="news.image">
+            </div>
+            <button mat-button [mat-dialog-close]="false" ><i class="material-icons">clear</i></button>
+        </div>
+        
+        <div class="gift-box product-img " *ngIf=" part_data.mode == 'test4'">  
+            <!-- <div class="form-area">
+                <img [src]="gift.image">
+            </div> -->
+            <div class="form-area" *ngIf="gift.gift_image==''">
+                <img [src]="gift.image">
+            </div>
+            <div class="form-area" *ngIf="gift.gift_image!=''">
+                <img [src]="uploadUrl+gift.gift_image">
+            </div>
+            <button mat-button [mat-dialog-close]="false" ><i class="material-icons">clear</i></button>
+        </div>
+        
+        <div class="gift-box product-img " *ngIf=" part_data.mode == 'test5'">  
+            <div class="form-area">
+                <img [src]="uploadUrl+karigarImage.profile">
+            </div>
+            <button mat-button [mat-dialog-close]="false" ><i class="material-icons">clear</i></button>
+        </div>
+        
+        <!-- <div class="gift-box product-img " *ngIf=" part_data.mode == 'test6'">  
+            <div class="form-area">
+                <img [src]="documentImage.document_image">
+            </div>
+            <button mat-button [mat-dialog-close]="false" ><i class="material-icons">clear</i></button>
+        </div> -->
+        
+
+
+
+        <div class="gift-box product-img " *ngIf=" part_data.mode == 'test6'">  
+            <div class="form-area dwn_rl">
+                <img [src]="uploadUrl+documentImage.document_image">
+                <a href="{{uploadUrl+documentImage.document_image}}" download target="_blank" ><i class="material-icons ico_dwn">get_app</i></a>
+            </div>
+            <button mat-button [mat-dialog-close]="false" ><i class="material-icons ">clear</i></button>
+        </div>
+
+
+
+
+
+
+
+
+        <!-- <div class="gift-box product-img " *ngIf=" part_data.mode == 'test9'">  
+            <div class="form-area">
+                <img [src]="documentImage.document_image_back">
+            </div>
+            <button mat-button [mat-dialog-close]="false" ><i class="material-icons">clear</i></button>
+        </div> -->
+
+
+
+
+
+        <div class="gift-box product-img " *ngIf=" part_data.mode == 'test9'">  
+            <div class="form-area dwn_rl">
+                <img [src]="uploadUrl+documentImage.document_image_back">
+                <a href="{{uploadUrl+documentImage.document_image_back}}" download target="_blank" ><i class="material-icons ico_dwn">get_app</i></a>
+            </div>
+            <button mat-button [mat-dialog-close]="false" ><i class="material-icons ">clear</i></button>
+        </div>
+
+
+
+
+
+        <div class="gift-box product-img " *ngIf=" part_data.mode == 'test7'">  
+            <div class="form-area">
+                <!-- <img [src]="image_type == 'en' ? uploadUrl+offerImage.banner : uploadUrl+offerImage.hin_banner"> -->
+            <!-- <img [src]="image_type == 'en' ? uploadUrl+offerImage.term_image : uploadUrl+offerImage.hin_term_image"> -->
+                <img [src]="uploadUrl+offerImage.offer_banner">
+            </div>
+            <button mat-button [mat-dialog-close]="false" ><i class="material-icons">clear</i></button>
+        </div>
+        
+        <div class="gift-box product-img " *ngIf=" part_data.mode == 'test8'">  
+            <div class="form-area">
+                <img [src]="db.myurl+'app/uploads/'+part_data.id">
+            </div>
+            <button mat-button [mat-dialog-close]="false" ><i class="material-icons">clear</i></button>
+        </div>
+
+        <div class="gift-box product-img " *ngIf=" part_data.mode == 'test15'">  
+                <div class="form-area">
+                    <img [src]="redeemGiftImage.image">
+                </div>
+                <button mat-button [mat-dialog-close]="false" ><i class="material-icons">clear</i></button>
+            </div>
+
+            <div class="gift-box product-img " *ngIf=" part_data.mode == 'base64'">  
+                <div class="form-area">
+                    <img [src]="mastergift">
+                </div>
+                <button mat-button [mat-dialog-close]="false" ><i class="material-icons">clear</i></button>
+            </div>
+
+            <div class="gift-box product-img " *ngIf=" part_data.mode == 'normal'">  
+                <div class="form-area">
+                    <img [src]="mastergift">
+                </div>
+                <button mat-button [mat-dialog-close]="false" ><i class="material-icons">clear</i></button>
+            </div>
+
+            <div class="gift-box product-img " *ngIf=" part_data.mode == 'document'">  
+                <div class="form-area">
+                    <img [src]="part_data.reedem_id">
+                </div>
+                <button mat-button [mat-dialog-close]="false" ><i class="material-icons">clear</i></button>
+            </div>
+
+    </mat-dialog-content>
+</div>

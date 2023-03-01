@@ -1,0 +1,63 @@
+<!-- top-header -->
+<header>
+    <div class="top-header">
+        <div class="other-sec">
+            
+            <div class="logo">
+                <img src="assets/logo.png">
+                <!-- <div id="nav-icon" (click)="toggleHeader()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div> -->
+            </div>
+            
+            <div class="navigation">
+                <ul>
+                    <li><a routerLink="/dashboard" *ngIf="this.db.datauser.id==1 || this.db.datauser.dashboard==1" routerLinkActive="active">Dashboard</a></li>
+                    <li><a routerLink="/offer-list" *ngIf="this.db.datauser.id==1 || this.db.datauser.offer==1"  routerLinkActive="active">Offer</a></li>
+                    <li><a routerLink="/gift-list"  *ngIf="this.db.datauser.id==1 || this.db.datauser.gift_gallery==1"  routerLinkActive="active">Gift Gallery</a></li>
+                    <li><a routerLink="/redeem-request-list" *ngIf="this.db.datauser.id==1 || this.db.datauser.redeem_request==1" routerLinkActive="active" >Redeem Request</a></li>
+                    <li><a routerLink="/karigar-list/1" *ngIf="this.db.datauser.id==1 || this.db.datauser.karigar==1" routerLinkActive="active">Carpenter</a></li>
+                    <li><a routerLink="/coupon-code-list"  *ngIf="this.db.datauser.id==1 || this.db.datauser.coupon_code==1" routerLinkActive="active">Coupon Codes</a></li>
+                    <li><a routerLink="/feedback-list" *ngIf="this.db.datauser.id==1 || this.db.datauser.feedback==1"  routerLinkActive="active">Messages</a></li>
+                    <li><a routerLink="/faq-questionnaire" *ngIf="this.db.datauser.id==1 || this.db.datauser.faq==1" routerLinkActive="active">FAQ</a></li>
+                    <li><a routerLink="/digitallist" *ngIf="this.db.datauser.id==1 || this.db.datauser.master==1" routerLinkActive="active">Master</a></li>         
+                </ul>
+            </div>
+        </div>
+        
+        <div class="connect-alignment" style="position: absolute; right: 15px;">
+            <ul>
+              <!--  <li>
+                    <div class="abacus-connect ">
+                        <button (click)="gotoAbacusConnect()">
+                            <img src="assets/img/abacus-icon.png">
+                            <p>Abacus Connect</p>
+                            <span *ngIf="task_cn!='0'">{{task_cn}}</span>
+                        </button>
+                    </div>
+                </li> -->
+                <li>
+                    <div class="top-nav">
+                        <ul>
+                            <li>
+                                <button mat-button [matMenuTriggerFor]="menu" class="mat-drop pl0">Welcome {{this.db.datauser.first_name}}</button>
+                                <mat-menu #menu="matMenu">
+                                    <a mat-menu-item (click)="logout()">Log Out</a>
+                                    <a mat-menu-item (click)="password_modal()">Manage Password</a>
+
+                                </mat-menu>
+                            </li> 
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+</header>
+
+<footer>
+    <img src="assets/abacusdesk.png" alt="">
+</footer>

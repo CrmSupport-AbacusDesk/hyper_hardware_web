@@ -1,0 +1,34 @@
+<div class="gift-box">
+  <div class="gift-heading">
+      <div class="export-count">
+          <p>{{loading ? 'Please Wait...' : 'Import Item Master'}}</p>
+      </div>
+      
+      <div class="close-icon">
+          <button mat-button [mat-dialog-close]="false" ><i class="material-icons">clear</i></button>
+      </div>
+  </div>
+  <mat-progress-bar *ngIf="loading" mode="indeterminate" value="40"></mat-progress-bar>
+  
+  <div class="modal-body pt0">
+      <div class="row mb0">
+          <div class="col s12">
+              <div class="file-import">
+                  <div class="border-erea file-border">
+                      <label>
+                          <form name="couponForm" #f="ngForm" novalidate autocomplete="off">
+                              <input type="file" name="coupon" #coupon_data="ngModel" [(ngModel)]="coupon_ex"  (change)="onUploadChange1($event,f)" accept=".csv"   style="display: none;">
+                          </form>
+                          <i class="material-icons">backup</i>
+                          <h4 >Upload</h4>
+                      </label>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div mat-dialog-actions *ngIf="file.size">
+          <button mat-raised-button (click)="uploadCoupon()" accept=".csv"color="primary">Upload</button>
+      </div>
+  </div>
+</div>
